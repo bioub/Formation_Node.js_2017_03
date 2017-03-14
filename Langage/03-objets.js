@@ -4,6 +4,10 @@ const contactFromObjectLiteral = {
     prenom: 'Romain',
     nom: 'Bohdanowicz',
     'date-de-naissance': '01/10/1985',
+    adresse: {
+        cp: '',
+        ville: ''
+    }
 };
 
 contactFromObjectLiteral.ville = 'Paris';
