@@ -1,0 +1,15 @@
+.idea
+.vscode
+
+npm_packages
+bower_components
+jspm_packages
+
+.DS_STORE
+
+tmp
+dist
+
+*.msi
+*.exe
+
