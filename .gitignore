@@ -13,3 +13,4 @@ dist
 *.msi
 *.exe
 
+npm-debug.log
