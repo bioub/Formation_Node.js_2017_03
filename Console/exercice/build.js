@@ -23,9 +23,12 @@ catch(e) {
   console.log(chalk.green(`Created dir ${distPath}`));
 }
 
+let dataBufferPackage =  fs.readFileSync(path.join(srcPath, 'node_modules/systemjs/package.json'));
+let versionSystem = JSON.parse(dataBufferPackage.toString()).version;
+
 let dataBuffer =  fs.readFileSync(path.join(srcPath, 'index.html'));
 let contenu = dataBuffer.toString();
-contenu = contenu.replace(`node_modules/systemjs/dist/system.src.js`, `https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.9/system.js`);
+contenu = contenu.replace(`node_modules/systemjs/dist/system.src.js`, `https://cdnjs.cloudflare.com/ajax/libs/systemjs/${versionSystem}/system.js`);
 contenu = contenu.replace(`<script>System.import('js/main.js');</script>`, `<script src="bundle.js"></script>`);
 
 fs.writeFileSync(path.join(distPath, 'index.html'), contenu);
