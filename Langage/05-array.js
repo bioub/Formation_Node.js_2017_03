@@ -4,7 +4,7 @@ var sum = nbs.reduce(function(acc, nb) {
     return acc + nb;
 }, 0);
 
-console.log(sum); 133
+console.log(sum); // 133
 
 /*
 acc: 0, nb: 14
@@ -28,7 +28,7 @@ var retourServeur = [{
     }
 }]
 
-var lats = retourServeur.map(function(obj) {
+var lats = retourServeur.map(function transform(obj) {
     return obj.address.coords.lat;
 });
 

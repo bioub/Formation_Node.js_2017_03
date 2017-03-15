@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "async": "^2.1.5",
+    "fs-promise": "^2.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "systemjs": "^0.19.46"
+  },
+  "devDependencies": {
+    "systemjs-builder": "^0.16.3"
+  }
+}

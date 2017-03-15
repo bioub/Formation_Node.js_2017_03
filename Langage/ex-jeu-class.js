@@ -12,8 +12,7 @@ var getRandomIntInclusive = function (min, max) {
 };
 
 class Jeu {
-    constructor(options) {
-        options = options || {};
+    constructor(options = {}) {
         this._min = options.min || 0;
         this._max = options.max || 100;
         this._entierAlea = getRandomIntInclusive(this._min, this._max);
@@ -47,7 +46,7 @@ class Jeu {
 
             console.log(`Gagné : ${answer} était le nombre !!!`);
             rl.close();
-        }.bind(this));
+        });
     }
 }
 

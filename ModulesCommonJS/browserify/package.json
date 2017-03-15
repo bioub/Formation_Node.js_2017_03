@@ -1,0 +1,13 @@
+{
+  "name": "exemple-browserify",
+  "scripts": {
+    "build": "browserify main.js > bundle.js",
+    "start:dev": "http-server",
+    "start": "http-server",
+    "postinstall": "npm run build"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.2",
+    "http-server": "^0.9.0"
+  }
+}

@@ -8,9 +8,10 @@ console.log(addition(1, 2, 3)); // 3
 console.log(addition(1)); // NaN
 
 /**
- * Additionne 2 nombres
+ * Additionne 2 nombres (JSDoc)
  * @param {number} a Le premier nombre
  * @param {number} b Le 2e nombre
+ * @throws Enverra une erreur si les 2 premiers params ne sont pas des nombres
  * @returns La somme
  */
 const additionNb = function(a, b) {

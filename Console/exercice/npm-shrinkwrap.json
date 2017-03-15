@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "systemjs": {
+      "version": "0.19.46",
+      "from": "systemjs@0.19.46",
+      "resolved": "https://registry.npmjs.org/systemjs/-/systemjs-0.19.46.tgz"
+    },
+    "when": {
+      "version": "3.7.8",
+      "from": "when@>=3.7.5 <4.0.0",
+      "resolved": "https://registry.npmjs.org/when/-/when-3.7.8.tgz"
+    }
+  }
+}
