@@ -693,9 +693,9 @@
       "dev": true
     },
     "systemjs": {
-      "version": "0.19.43",
-      "from": "systemjs@0.19.43",
-      "resolved": "https://registry.npmjs.org/systemjs/-/systemjs-0.19.43.tgz"
+      "version": "0.19.46",
+      "from": "systemjs@0.19.46",
+      "resolved": "https://registry.npmjs.org/systemjs/-/systemjs-0.19.46.tgz"
     },
     "through": {
       "version": "2.3.8",

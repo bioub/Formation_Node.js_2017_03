@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "systemjs": "^0.19.43"
+    "systemjs": "^0.19.46"
   },
   "devDependencies": {
     "browserify": "^12.0.2"
