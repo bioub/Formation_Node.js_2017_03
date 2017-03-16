@@ -9,7 +9,7 @@ const logFileAsync = function(filePath, msg, cb) {
             if (err) return reject(err);
             resolve();
         });
-    })
+    });
 };
 
 logFileAsync('logs/app.log', 'Hello 1')
