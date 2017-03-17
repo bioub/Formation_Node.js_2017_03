@@ -47,18 +47,18 @@
 </nav>
 
 <div class="container">
-    <h2>Liste des contacts</h2>
-    <table class="table table-bordered table-striped">
-        <% contacts.forEach(function(contact) { %>
-        <tr>
-            <td><%= contact.prenom %> <%= contact.nom %></td>
-            <td>
-                <a href="/contacts/<%= contact._id %>" class="btn btn-primary btn-xs">Afficher</a>
-                <a href="/contacts/<%= contact._id %>/delete" class="btn btn-danger btn-xs">Supprimer</a>
-            </td>
-        </tr>
-        <% }); %>
-    </table>
+    <h2>Ajouter un contact</h2>
+    <form method="post">
+        <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" name="prenom" class="form-control" placeholder="Prénom">
+        </div>
+        <div class="form-group">
+            <label>Nom</label>
+            <input type="text" name="nom" class="form-control" placeholder="Nom">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

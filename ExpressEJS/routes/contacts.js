@@ -1,4 +1,5 @@
 var express = require('express');
+const Contact = require('../models/contact');
 var router = express.Router();
 
 const contacts = [{
@@ -13,33 +14,51 @@ const contacts = [{
 
 /* GET contacts listing. */
 router.get('/', function(req, res, next) {
-  res.render('contacts/list', {contacts: contacts});
+  Contact.find()
+    .then((contacts) => {
+      res.render('contacts/list', {contacts});
+    })
+    .catch(next);
 });
+
+router.get('/ajouter', function(req, res, next) {
+  res.render('contacts/add');
+});
+
+router.post('/ajouter', function(req, res, next) {
+  let contact = new Contact(req.body);
+  contact.save()
+    .then((contact) => {
+      res.redirect('/contacts/' + contact._id);
+    })
+    .catch(next);
+});
+
+// Créer les pages /societes liste et details
+
+
 
 /* GET contacts details. */
 router.get('/:id', function(req, res, next) {
   const id = req.params.id;
 
-  let contact = contacts.find((contact) => contact.id === Number(id));
-
-  if (!contact) {
-    req.notFoundReason = 'Contact not found';
-    return next();
-  }
-
-  res.render('contacts/show', {contact: contact});
+  Contact.findById(id)
+    .then((contact) => {
+      res.render('contacts/show', {contact});
+    })
+    .catch(next);
 });
 
 /* Supprimer un contact */
 router.get('/:id/delete', function(req, res, next) {
   const id = req.params.id;
 
-  let contact = 'à rechercher dans le tableau';
-  // à supprimer
-
-  res.render('contacts/deleteConfirmation', {contact: contact});
+  Contact.findByIdAndRemove(id)
+    .then((contact) => {
+      res.redirect('/contacts');
+    })
+    .catch(next);
 });
 
-// TODO enregistrer ces routes dans app.js (idem users)
 
 module.exports = router;

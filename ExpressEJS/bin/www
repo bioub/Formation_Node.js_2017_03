@@ -7,6 +7,10 @@
 var app = require('../app');
 var debug = require('debug')('expressejs:server');
 var http = require('http');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/addressbook');
 
 /**
  * Get port from environment and store in Express.
