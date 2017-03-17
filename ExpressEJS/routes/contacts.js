@@ -35,8 +35,9 @@ router.post('/ajouter', function(req, res, next) {
 });
 
 // Créer les pages /societes liste et details
-
-
+// Faire le formulaire de modification de contacts
+// A mi chemin entre details (<input value="ancienne valeur">)
+// et ajouter (findByIdAndUpdate)
 
 /* GET contacts details. */
 router.get('/:id', function(req, res, next) {
@@ -60,5 +61,25 @@ router.get('/:id/delete', function(req, res, next) {
     .catch(next);
 });
 
+
+router.get('/:id/update', function(req, res, next) {
+  const id = req.params.id;
+
+  Contact.findById(id)
+    .then((contact) => {
+      res.render('contacts/update', {contact});
+    })
+    .catch(next);
+});
+
+router.post('/:id/update', function(req, res, next) {
+  const id = req.params.id;
+
+  Contact.findByIdAndUpdate(id, req.body)
+    .then((contact) => {
+      res.redirect('/contacts/' + contact._id);
+    })
+    .catch(next);
+});
 
 module.exports = router;
