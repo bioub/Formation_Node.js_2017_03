@@ -21,10 +21,10 @@ logFileAsync('logs/app.log', 'Hello 1', () => {
 */
 
 async.series([
-    callback => logFileAsync('logs/app.log', 'Hello 1', callback),
-    callback => logFileAsync('logs/app.log', 'Hello 2', callback),
-    callback => logFileAsync('logs/app.log', 'Hello 3', callback),
-    callback => logFileAsync('logs/app.log', 'Hello 4', callback),
+    next => logFileAsync('logs/app.log', 'Hello 1', next),
+    next => logFileAsync('logs/app.log', 'Hello 2', next),
+    next => logFileAsync('logs/app.log', 'Hello 3', next),
+    next => logFileAsync('logs/app.log', 'Hello 4', next),
 ],
 (err, results) => {
     console.log('Log done');
